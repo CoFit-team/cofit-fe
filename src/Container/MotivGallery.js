@@ -1,19 +1,14 @@
 import React from "react";
-import {
-  Container,
-  Grid,
-  Header,
-  Segment,
-  Divider,
-  Image,
-} from "semantic-ui-react";
+import { Container, Grid, Header, Segment, Divider } from "semantic-ui-react";
 import MotivCard from "../Components/MotivCard";
+
 class MotivGallery extends React.Component {
   constructor() {
     super();
     this.state = {
       errorMessage: "",
       motivCardsData: [],
+      sideBarState: false,
     };
   }
 
@@ -32,29 +27,30 @@ class MotivGallery extends React.Component {
   //   }
   // }
 
+  // SidebarExampleSidebar = () => {
+  //   const [visible, setVisible] = useBooleanKnob({ name: "visible" });
+  // };
+
   render() {
     return (
       <div aria-label="motiv-gallery">
-        <Segment inverted color="black">
-          <Image src="../../public/logo.png"></Image>
-          <Header as="h1" textAlign="center">
-            Motiv Gallery
-          </Header>
-        </Segment>
+        <Header as="h1" textAlign="center">
+          Motiv Gallery
+        </Header>
 
         <Container>
           <Grid centered="true" padded="true">
             <Grid.Row columns={4}>
-              <Grid.Column>
+              <Grid.Column mobile="six" largeScreen="three">
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column mobile="six" largeScreen="three">
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column mobile="six" largeScreen="three">
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column>
+              <Grid.Column mobile="six" largeScreen="three">
                 <MotivCard />
               </Grid.Column>
             </Grid.Row>
