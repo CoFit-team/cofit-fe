@@ -6,6 +6,7 @@ import MotivDashboard from "./Container/MotivDashboard";
 import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
 import RegisterUser from "./Components/Register";
+import CreateMotiv from "./Components/CreateMotiv";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/dashboard" component={MotivDashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/newuser" component={RegisterUser} />
+          <Route exact path="/createmotiv" component={CreateMotiv} />
         </Switch>
       </div>
     </BrowserRouter>
