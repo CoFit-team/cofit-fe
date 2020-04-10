@@ -1,7 +1,8 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: process.env.REACT_APP_COFIT_BACKEND
+  baseURL: "https://cofit-backend.herokuapp.com",
 });
 instance.defaults.headers.post["Content-Type"] = "application/json";
+instance.defaults.withCredentials = true;
 
 export default instance;
