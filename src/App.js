@@ -22,5 +22,8 @@ function App() {
     </div>
   );
 }
+const Genius = () => {
+  return "hi"
+}
 
 export default App;
