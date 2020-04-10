@@ -39,28 +39,27 @@ class MotivGallery extends React.Component {
         </Header>
 
         <Container>
-          <Grid centered="true" padded="true">
-            <Grid.Row columns={4}>
-              <Grid.Column mobile="six" largeScreen="three">
+          <Grid>
+            <Grid.Row centered columns={5}>
+              <Grid.Column>
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column mobile="six" largeScreen="three">
+              <Grid.Column>
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column mobile="six" largeScreen="three">
+              <Grid.Column>
                 <MotivCard />
               </Grid.Column>
-              <Grid.Column mobile="six" largeScreen="three">
+              <Grid.Column>
+                <MotivCard />
+              </Grid.Column>
+              <Grid.Column>
                 <MotivCard />
               </Grid.Column>
             </Grid.Row>
           </Grid>
           <Divider></Divider>
-          <Grid>
-            <MotivCard />
-            <MotivCard />
-            <MotivCard />
-          </Grid>{" "}
+          <Grid></Grid>
         </Container>
         <Segment inverted color="black" textAlign="center" as="h5">
           Created by Co-fit
