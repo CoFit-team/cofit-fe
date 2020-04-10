@@ -16,11 +16,17 @@ const Navbar = () => (
       <Menu.Item name="Gallery">
         <Link to="/"> Motiv Gallery</Link>
       </Menu.Item>
+
       <Menu.Item name="Login">
         <Link to="/login"> Login? </Link>
       </Menu.Item>
+
       <Menu.Item name="Register">
         <Link to="/newuser">Register</Link>
+      </Menu.Item>
+
+      <Menu.Item name="CreateMotiv">
+        <Link to="/createmotiv">Create Motiv</Link>
       </Menu.Item>
     </Menu>
   </div>
