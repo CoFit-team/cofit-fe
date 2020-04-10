@@ -4,10 +4,10 @@ import "./MotivCard.css";
 
 const MotivCard = () => (
   <div>
-    <Card textAlign="center">
+    <Card>
       <Image src="https://goqii.com/blog/wp-content/uploads/7-Positive-Habits-To-Have-An-Incredible-Day-1024x686.jpg" />
       <Card.Header textAlign="center">Today's great</Card.Header>
-      <Card.Content>
+      <Card.Content textAlign="center">
         <Card.Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
           congue tincidunt arcu, sit amet feugiat neque mollis non. Nulla porta
