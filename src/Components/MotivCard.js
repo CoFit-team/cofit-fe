@@ -6,7 +6,7 @@ const MotivCard = () => (
   <div>
     <Card textAlign="center">
       <Image src="https://goqii.com/blog/wp-content/uploads/7-Positive-Habits-To-Have-An-Incredible-Day-1024x686.jpg" />
-      <Card.Header>Today's great</Card.Header>
+      <Card.Header textAlign="center">Today's great</Card.Header>
       <Card.Content>
         <Card.Description>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
@@ -18,7 +18,7 @@ const MotivCard = () => (
       <Card.Content extra>
         <Icon name="like" />
         <p>15 likes</p>
-        <Card.Meta>Positivity</Card.Meta>
+        <Card.Meta textAlign="right">Positivity</Card.Meta>
       </Card.Content>
     </Card>
   </div>
