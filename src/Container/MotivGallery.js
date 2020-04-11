@@ -16,7 +16,7 @@ class MotivGallery extends React.Component {
 
   componentDidMount() {
     this.getAllMotivs();
-    this.checkUserLogin();
+    // this.checkUserLogin();
   }
 
   getAllMotivs = async () => {
