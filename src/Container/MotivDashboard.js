@@ -1,33 +1,41 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
+import { Container } from "semantic-ui-react";
+import { Radar } from "chart.js";
+//import RadarChart from "../Components/RadarChart";
+// import EmotionsForm from "../Components/EmotionsForm";
+//import axios from "../utils/axios"
 
 class MotivDashboard extends React.Component {
   constructor() {
     super();
     this.state = { dashBoardState: "" };
     this.data = {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [
-        {
-          label: "my happy emotions",
-          backgroundColor: "rgb(255, 99, 132)",
-          borderColor: "rgb(255, 99, 132)",
-          data: [0, 10, 5, 2, 20, 30, 45],
-        },
-      ],
+      labels: ["😍", "😁", "😐", "🙁", "😣"],
+      datasets: [{ data: [40, 17, 22, 32, 47] }],
+    };
+
+    this.options = {
+      responsive: true,
     };
   }
 
-  createChart = (data) => {
+  createChart = (data, options) => {
     return (
       <div>
-        <Bar data={data} />
+        <Container width={300} height={300}>
+          <Radar data={data} options={options} width={1} height={1} />
+        </Container>
       </div>
     );
   };
 
   render() {
-    return <div>{this.createChart(this.data)}</div>;
+    return (
+      <Container>
+        {/* {createChart(this.data, this.options)} */}
+        {this.createChart(this.data)}
+      </Container>
+    );
   }
 }
 

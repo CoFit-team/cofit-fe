@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "../utils/axios";
+import {Route} from "react-router-dom"
 import { Header, Card, Form, Button } from "semantic-ui-react";
 
 class Login extends React.Component {
@@ -65,6 +66,7 @@ class Login extends React.Component {
               Submit
             </Button>
             {this.state.loginSuccess === true && <h5> Login Successful! </h5>}
+            {this.state.loginSuccess === true && <Route render={({history})=> history.push("/")} />}
           </Form>
         </Card.Content>
       </Card>

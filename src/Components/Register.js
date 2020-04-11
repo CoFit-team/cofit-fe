@@ -1,13 +1,12 @@
 import React from "react";
 import axios from "../utils/axios";
-import { uuid } from "uuidv4";
-import { Card, Header, Form, Button, Checkbox } from "semantic-ui-react";
+import { Card, Header, Form, Button, Checkbox, Container } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class RegisterUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: "",
       username: "",
       password: "",
       email: "",
@@ -37,9 +36,8 @@ class RegisterUser extends React.Component {
       registerSuccess: true,
     });
   };
-  RegisterUser = async (event) => {
+  registerUser = async (event) => {
     const details = {
-      userId: uuid(),
       username: this.state.username,
       password: this.state.password,
       email: this.state.email,
@@ -84,11 +82,16 @@ class RegisterUser extends React.Component {
             <Form.Field>
               <Checkbox label="I agree to the Terms and Conditions" />
             </Form.Field>
-            <Button type="submit" onClick={(event) => this.RegisterUser(event)}>
+            <Button type="submit" onClick={(event) => this.registerUser(event)}>
               Submit
             </Button>
             {this.state.loginSuccess === true && (
-              <h5> Register Successful! </h5>
+              <Container>
+                <Header as="h5"> Register Successful! </Header>
+                <Button>
+                  <Link to="/login"> Click to Login Page </Link>
+                </Button>
+              </Container>
             )}
           </Form>
         </Card.Content>
