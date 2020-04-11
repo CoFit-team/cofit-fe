@@ -9,7 +9,6 @@ class NewMotiv extends React.Component {
       imageFile: "",
       text: "",
       postMotivSuccess: false,
-      image: [],
       uploading: false,
     };
   }
@@ -33,10 +32,9 @@ class NewMotiv extends React.Component {
   };
   addImage = (event) => {
     this.setState({
-      imageFile: event.target.files[0],
-      loaded: 0,
+      imageFile: event.target.files,
     });
-    console.log(this.imageFile);
+    console.log(this.state.imageFile);
   };
   onPostMotivSuccess = () => {
     this.setState({
@@ -44,12 +42,9 @@ class NewMotiv extends React.Component {
     });
   };
 
-  handleChange(selectorFiles, FileList) {
-    console.log(selectorFiles);
-  }
   PostMotiv = async (event) => {
     const payload = {
-      imageURL: this.state.imageFile,
+      imageFile: this.state.imageFile,
       text: this.state.text,
     };
     const res = await axios.post("/motivs", payload);
@@ -69,7 +64,7 @@ class NewMotiv extends React.Component {
                 onChange={this.onChangeText}
                 value={this.state.text}
               />
-              <input type="file" name="file" onChange={this.addImage} />
+              {/* <input type="file" name="file" onChange={this.addImage} /> */}
             </Form.Field>
             <Button type="submit" onClick={(event) => this.PostMotiv(event)}>
               Submit

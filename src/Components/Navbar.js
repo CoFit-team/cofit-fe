@@ -1,17 +1,20 @@
 import React from "react";
-import { Menu, Container } from "semantic-ui-react";
-import { Route, Link } from "react-router-dom";
+import { Menu, Container, Image } from "semantic-ui-react";
+import { withRouter, Link } from "react-router-dom";
 import axios from "../utils/axios";
 import "./Navbar.css";
 
 const onClickLogOut = async () => {
   const res = await axios.post("/users/logout");
+  if (res.status === 200) {
+    alert("You have successfully logged out!");
+  }
   return res.data;
 };
 
 const Navbar = () => (
   <Container>
-    <Menu size="large" inverted color="black" className="flex" fixed="top">
+    <Menu size="large" inverted color="orange" className="flex" fixed="top">
       <Menu.Item name="Dashboard">
         <Link to="/dashboard">Dashboard</Link>
       </Menu.Item>
@@ -32,11 +35,9 @@ const Navbar = () => (
         <Link to="/createmotiv">Create Motiv</Link>
       </Menu.Item>
 
-      <Menu.Item name="Logout" onClick={onClickLogOut}>
-      {/* <Route render={({history}) => history.push("/login")} /> */}
-      </Menu.Item>
-      </Menu>
-      </Container>
+      <Menu.Item name="Logout" onClick={onClickLogOut}></Menu.Item>
+    </Menu>
+  </Container>
 );
 
-export default Navbar;
+export default withRouter(Navbar);
